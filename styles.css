@@ -1,0 +1,100 @@
+
+/* --- Book Haven v3: Official Palette + Typography Hierarchy ---
+   Colors: Inkwell Blue #2E4057, Intensity Indigo #EE583F,
+           Aged Gold #C7B65E, Parchment #FFF7EE, Text #131C26
+   Typography (per guide):
+     - h1: Courier New Bold 40px
+     - h2: Georgia Bold 30px
+     - h3: Arial Bold 25px
+     - nav links: Arial Bold 15px
+     - buttons: Arial Bold 16px
+     - body text: Arial Normal 16px
+     - small/notes: Calibri Normal 11px
+     - tagline: Comic Sans MS Normal 20px (.tagline)
+----------------------------------------------------------------- */
+
+:root{
+  --bg:#FFF7EE;
+  --text:#131C26;
+  --muted:#2E4057;
+  --brand:#2E4057;
+  --brand-contrast:#ffffff;
+  --accent:#EE583F;
+  --highlight:#C7B65E;
+  --card:#ffffff;
+  --border:#E6E0D6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size:16px;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+/* Headings per spec */
+h1{font-family:"Courier New", Courier, monospace;font-weight:700;font-size:40px;color:var(--muted);letter-spacing:.2px;margin:.2em 0;}
+h2{font-family:Georgia, "Times New Roman", Times, serif;font-weight:700;font-size:30px;color:var(--muted);margin:.3em 0;}
+h3{font-family:Arial, Helvetica, sans-serif;font-weight:700;font-size:25px;color:var(--muted);margin:.4em 0;}
+/* Tagline */
+.tagline{font-family:"Comic Sans MS", "Comic Sans", cursive;font-weight:400;font-size:20px;color:#374151;margin:.2em 0 1em;}
+a{color:var(--accent)} a:hover{text-decoration:none;filter:saturate(1.1)}
+img{max-width:100%;height:auto}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+header{
+  position:sticky;top:0;z-index:10;background:#fffdf8;border-bottom:2px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0,0,0,.03);
+}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand img{width:48px;height:48px}
+.site-title{font-size:20px;font-weight:700;color:var(--muted);font-family:Arial, Helvetica, sans-serif;}
+nav ul{display:flex;gap:.5rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{
+  display:inline-block;padding:.5rem .8rem;border-radius:.75rem;text-decoration:none;border:1px solid transparent;
+  color:var(--muted);font-weight:700;font-size:15px;font-family:Arial, Helvetica, sans-serif;
+}
+nav a[aria-current="page"]{background:var(--brand);color:var(--brand-contrast)} 
+nav a:hover{border-color:var(--highlight); background:#fff}
+main{padding-block:1.25rem}
+.grid{display:grid;gap:1rem}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem}
+.badge{display:inline-block;background:var(--highlight);color:#322e00;padding:.25rem .55rem;border-radius:999px;font-size:.8rem;font-weight:700;font-family:Arial, Helvetica, sans-serif;}
+.btn{
+  display:inline-block;border:1px solid var(--accent);background:var(--accent);color:#fff;
+  padding:.6rem 1rem;border-radius:.8rem;text-decoration:none;cursor:pointer;font-weight:700;letter-spacing:.2px;
+  font-family:Arial, Helvetica, sans-serif;font-size:16px;
+}
+.btn.outline{background:transparent;color:var(--accent)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:.75rem;border-bottom:1px solid var(--border);vertical-align:top}
+.table th{background:#f7efe4;text-align:left}
+.perks{display:flex;gap:1rem;flex-wrap:wrap}
+.perks .perk{flex:1 1 200px;border:1px dashed var(--border);padding:1rem;border-radius:.75rem;background:#fff}
+footer{margin-top:2rem;border-top:2px solid var(--border);background:#fffdf8}
+.footer-inner{display:grid;gap:1rem;grid-template-columns:1.2fr .8fr}
+.footer-nav{display:flex;gap:1rem;flex-wrap:wrap}
+input, select, textarea{
+  width:100%;padding:.65rem;border:1px solid var(--border);border-radius:.6rem;font:inherit;background:#fff
+}
+label{font-weight:700;display:block;margin-top:.75rem;margin-bottom:.25rem;font-family:Arial, Helvetica, sans-serif;}
+small, .small-note{font-family:Calibri, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;font-size:11px}
+.form-row{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+fieldset{border:1px solid var(--border);border-radius:.75rem;padding:1rem}
+legend{font-weight:700}
+
+/* Modal */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:1rem
+}
+.modal{max-width:700px;width:100%;background:#fff;border-radius:1rem;border:1px solid var(--border);padding:1rem}
+.modal-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:.5rem}
+.modal-actions{display:flex;gap:.5rem;justify-content:flex-end}
+.show{display:flex}
+
+/* Accessibility focus */
+:focus-visible{outline:3px solid #C7B65E;outline-offset:2px;border-radius:.25rem}

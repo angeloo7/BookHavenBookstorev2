@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • Book Haven Bookstore</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#2E4057" />
+</head>
+<body>
+<header role="banner">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Book Haven logo" />
+      <div class="site-title">Book Haven Bookstore</div>
+    </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current='page'>Home</a></li>
+        <li><a href="gallery.html" >Gallery</a></li>
+        <li><a href="about.html" >About Us</a></li>
+        <li><a href="custom.html" >Community</a></li>
+      </ul>
+    </nav>
+    <button class="btn outline" id="btnViewCartTop" aria-haspopup="dialog" aria-controls="cartModal">View Cart</button>
+  </div>
+</header>
+<main class="container">
+
+  <h1>Welcome to Book Haven</h1>
+  <p class="tagline">A cozy corner for curious minds.</p>
+
+  <section class="grid grid-3" aria-labelledby="highlights">
+    <h2 id="highlights">Client Highlights</h2>
+    <article class="card">
+      <h3>New Arrivals</h3>
+      <p>Hand-picked fiction, science, and children’s books just in.</p>
+      <span class="badge" aria-label="Shopping Promo">Buy 2, get 1 50% off</span>
+    </article>
+    <article class="card">
+      <h3>Local Authors</h3>
+      <p>Discover voices from our community with monthly signings.</p>
+      <span class="badge">Members save 10%</span>
+    </article>
+    <article class="card">
+      <h3>Student Picks</h3>
+      <p>Budget-friendly textbooks and study guides.</p>
+      <span class="badge">Used & New</span>
+    </article>
+  </section>
+
+  <section style="margin-top:1rem">
+    <h2>Shopping Perks</h2>
+    <div class="perks">
+      <div class="perk"><strong>Free pickup</strong><br/>Order online, collect in-store.</div>
+      <div class="perk"><strong>Fast shipping</strong><br/>48-hour dispatch on most titles.</div>
+      <div class="perk"><strong>Hassle-free returns</strong><br/>30-day return window.</div>
+    </div>
+  </section>
+
+  <section style="margin-top:1rem">
+    <h2>Categories</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Fiction</h3><img src="assets/Client3_Book1.png" alt="Brie Mine 4Ever book cover"/></div>
+      <div class="card"><h3>Science & Sports</h3><img src="assets/Client3_Magazine1.png" alt="BALL magazine cover"/></div>
+      <div class="card"><h3>Accessories</h3><img src="assets/Client3_ToteBag.png" alt="Book Haven canvas tote bag"/></div>
+    </div>
+  </section>
+
+</main>
+<footer role="contentinfo">
+  <div class="container footer-inner">
+    <section aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Subscribe to our newsletter</h2>
+      <form id="newsletterForm">
+        <label for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" required placeholder="you@example.com" aria-describedby="newsletterHelp" />
+        <small id="newsletterHelp" class="help small-note">We’ll only send you Book Haven updates. Unsubscribe anytime.</small>
+        <div style="margin-top:.75rem">
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <h2>Follow & Navigate</h2>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="custom.html">Community</a>
+        <a href="#" aria-label="Visit our Instagram">Instagram</a>
+        <a href="#" aria-label="Visit our Facebook">Facebook</a>
+        <a href="#" aria-label="Visit our X profile">X</a>
+      </nav>
+    </section>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div class="modal-backdrop" id="cartBackdrop" role="presentation">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle" id="cartModal">
+    <div class="modal-header">
+      <h3 id="cartTitle">Your Cart</h3>
+      <button class="btn outline" id="btnCloseCart" aria-label="Close cart">Close</button>
+    </div>
+    <div id="cartContents" style="padding:1rem 0"></div>
+    <div class="modal-actions">
+      <button class="btn outline" id="btnClearCart">Clear Cart</button>
+      <button class="btn" id="btnProcessOrder">Process Order</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

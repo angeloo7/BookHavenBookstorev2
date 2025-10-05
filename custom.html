@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community • Book Haven Bookstore</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#2E4057" />
+</head>
+<body>
+<header role="banner">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Book Haven logo" />
+      <div class="site-title">Book Haven Bookstore</div>
+    </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="gallery.html" >Gallery</a></li>
+        <li><a href="about.html" >About Us</a></li>
+        <li><a href="custom.html" aria-current='page'>Community</a></li>
+      </ul>
+    </nav>
+    <button class="btn outline" id="btnViewCartTop" aria-haspopup="dialog" aria-controls="cartModal">View Cart</button>
+  </div>
+</header>
+<main class="container">
+
+  <h1>Community</h1>
+  <section class="grid grid-3">
+    <article class="card">
+      <h2>Customer Testimonials</h2>
+      <p>“The coziest shop in town. Staff are super helpful and kind.” — Alex M.</p>
+      <p>“Great selection of children’s books and weekend story time!” — Priya K.</p>
+    </article>
+    <article class="card">
+      <h2>Events & Collaborations</h2>
+      <ul>
+        <li>First Fridays: Local author signings</li>
+        <li>Last Saturdays: Book club meetups</li>
+        <li>School drives: Donate a book, get 5% off</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h2>In the Community</h2>
+      <p>We donate books to local schools and partner with libraries to host literacy workshops.</p>
+    </article>
+  </section>
+
+</main>
+<footer role="contentinfo">
+  <div class="container footer-inner">
+    <section aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Subscribe to our newsletter</h2>
+      <form id="newsletterForm">
+        <label for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" required placeholder="you@example.com" aria-describedby="newsletterHelp" />
+        <small id="newsletterHelp" class="help small-note">We’ll only send you Book Haven updates. Unsubscribe anytime.</small>
+        <div style="margin-top:.75rem">
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <h2>Follow & Navigate</h2>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="custom.html">Community</a>
+        <a href="#" aria-label="Visit our Instagram">Instagram</a>
+        <a href="#" aria-label="Visit our Facebook">Facebook</a>
+        <a href="#" aria-label="Visit our X profile">X</a>
+      </nav>
+    </section>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div class="modal-backdrop" id="cartBackdrop" role="presentation">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle" id="cartModal">
+    <div class="modal-header">
+      <h3 id="cartTitle">Your Cart</h3>
+      <button class="btn outline" id="btnCloseCart" aria-label="Close cart">Close</button>
+    </div>
+    <div id="cartContents" style="padding:1rem 0"></div>
+    <div class="modal-actions">
+      <button class="btn outline" id="btnClearCart">Clear Cart</button>
+      <button class="btn" id="btnProcessOrder">Process Order</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

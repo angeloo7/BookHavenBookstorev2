@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us • Book Haven Bookstore</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#2E4057" />
+</head>
+<body>
+<header role="banner">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Book Haven logo" />
+      <div class="site-title">Book Haven Bookstore</div>
+    </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="gallery.html" >Gallery</a></li>
+        <li><a href="about.html" aria-current='page'>About Us</a></li>
+        <li><a href="custom.html" >Community</a></li>
+      </ul>
+    </nav>
+    <button class="btn outline" id="btnViewCartTop" aria-haspopup="dialog" aria-controls="cartModal">View Cart</button>
+  </div>
+</header>
+<main class="container">
+
+  <h1>About Book Haven</h1>
+  <p>We are a community-first bookstore offering new & used titles, local author spotlights, and cozy reading spaces.</p>
+
+  <section class="card" aria-labelledby="hours">
+    <h2 id="hours">Business Hours</h2>
+    <ul>
+      <li>Mon–Fri: 9:00 AM – 7:00 PM</li>
+      <li>Sat: 10:00 AM – 6:00 PM</li>
+      <li>Sun: 11:00 AM – 4:00 PM</li>
+    </ul>
+  </section>
+
+  <section style="margin-top:1rem" aria-labelledby="feedbackTitle">
+    <h2 id="feedbackTitle">Feedback & Custom Orders</h2>
+    <p>Tell us what you think or request a custom order. This form saves to your browser’s local storage to demonstrate client-side processing.</p>
+
+    <form id="feedbackForm">
+      <div class="form-row">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" name="name" required placeholder="Jane Doe" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="jane@example.com" />
+        </div>
+      </div>
+      <label for="type">Request type</label>
+      <select id="type" name="type" required>
+        <option value="">Choose one…</option>
+        <option>Feedback</option>
+        <option>Custom Order</option>
+      </select>
+      <label for="message">Message / Book details</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Share feedback or describe the custom order (title/author/ISBN, quantity, deadline)…"></textarea>
+      <div style="margin-top: .75rem">
+        <button class="btn" type="submit">Submit</button>
+      </div>
+    </form>
+    <div id="feedbackNotice" role="status" aria-live="polite" style="margin-top:.75rem"></div>
+  </section>
+
+</main>
+<footer role="contentinfo">
+  <div class="container footer-inner">
+    <section aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Subscribe to our newsletter</h2>
+      <form id="newsletterForm">
+        <label for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" required placeholder="you@example.com" aria-describedby="newsletterHelp" />
+        <small id="newsletterHelp" class="help small-note">We’ll only send you Book Haven updates. Unsubscribe anytime.</small>
+        <div style="margin-top:.75rem">
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <h2>Follow & Navigate</h2>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="custom.html">Community</a>
+        <a href="#" aria-label="Visit our Instagram">Instagram</a>
+        <a href="#" aria-label="Visit our Facebook">Facebook</a>
+        <a href="#" aria-label="Visit our X profile">X</a>
+      </nav>
+    </section>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div class="modal-backdrop" id="cartBackdrop" role="presentation">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle" id="cartModal">
+    <div class="modal-header">
+      <h3 id="cartTitle">Your Cart</h3>
+      <button class="btn outline" id="btnCloseCart" aria-label="Close cart">Close</button>
+    </div>
+    <div id="cartContents" style="padding:1rem 0"></div>
+    <div class="modal-actions">
+      <button class="btn outline" id="btnClearCart">Clear Cart</button>
+      <button class="btn" id="btnProcessOrder">Process Order</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
